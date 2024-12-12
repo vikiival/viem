@@ -149,6 +149,7 @@ await walletClient.writeContract({
   address: '0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2',
   abi: wagmiAbi,
   functionName: 'mint',
+  args: [69420],
   account,
 })
 ```
@@ -157,7 +158,7 @@ await walletClient.writeContract({
 export const wagmiAbi = [
   ...
   {
-    inputs: [],
+    inputs: [{ name: "tokenId", type: "uint32" }],
     name: "mint",
     outputs: [],
     stateMutability: "nonpayable",
